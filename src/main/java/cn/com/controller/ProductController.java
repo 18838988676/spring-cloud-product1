@@ -17,10 +17,9 @@ public class ProductController {
 	
 	@GetMapping("/ribbon")
 	public UserPo testRibbon() {
-		System.out.println("111");
 		UserPo userPo=null;
 		for (int i = 0; i <20; i++) {
-			userPo=restTemplate.getForObject("http://wmcuser/user/"+(i+1), UserPo.class);
+			userPo=restTemplate.getForObject("http://WMCUSER/user/user/"+(i+1), UserPo.class);
 		}
 		return userPo;
 	}

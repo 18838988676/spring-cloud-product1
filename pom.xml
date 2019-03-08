@@ -52,13 +52,13 @@
 
 		<!-- 添加日志end -->
 	
-	<!-- 热部署模块 -->
+	<!-- 热部署模块  start-->
 	 <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-devtools</artifactId>
         <optional>true</optional><!-- 这个需要为 true 热部署才有效 -->
     </dependency>
-	
+	<!-- 热部署模块  end-->
 	
 	<dependency>
 		<groupId>org.springframework.cloud</groupId>
