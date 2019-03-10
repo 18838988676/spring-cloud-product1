@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>cn.com.group</groupId>
-	<artifactId>spring-cloud-product</artifactId>
+	<artifactId>spring-cloud-product1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>spring-cloud-product</name>
+	<name>spring-cloud-product1</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

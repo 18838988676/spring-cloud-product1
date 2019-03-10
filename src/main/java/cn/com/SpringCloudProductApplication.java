@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 public class SpringCloudProductApplication {
 
 	//初始化负载均衡
-	@LoadBalanced  //多借点负载均衡  sss
+	@LoadBalanced  //多借点负载均衡  sss444
 	@Bean(name="restTemplate")
 	public RestTemplate initRestTemplate() {
 		return new RestTemplate();
