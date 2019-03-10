@@ -1,4 +1,4 @@
-package cn.com.group.pojo;
+package cn.com.pojo;
 
 import java.io.Serializable;
 

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import cn.com.group.pojo.UserPo;
+import cn.com.pojo.UserPo;
 
 @RestController
 @RequestMapping("/product")
