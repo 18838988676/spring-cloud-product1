@@ -2,20 +2,21 @@ package cn.com.pojo;
 
 import java.io.Serializable;
 
-public class UserPo implements Serializable{
+public class User implements Serializable{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private Long id;
+	private Integer id;
 	private String UserName;
 	private int level;
 	private String note;
-	public Long getId() {
+	
+	public Integer getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getUserName() {
@@ -41,7 +42,8 @@ public class UserPo implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "UserPo [id=" + id + ", UserName=" + UserName + ", level=" + level + ", note=" + note + "]";
+		return "User [id=" + id + ", UserName=" + UserName + ", level=" + level
+				+ ", note=" + note + "]";
 	}
 	
 	
