@@ -21,7 +21,18 @@
 	</properties>
 
 	<dependencies>
-
+		<!-- 添加监控 spring-cloud  start -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<!-- 添加监控 spring-cloud  end -->
+		<!-- 添加Hystrix断路器 spring-cloud  start -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+		</dependency>
+		<!-- 添加Hystrix  spring-cloud end -->
 		<!-- 引入Feign依赖，会自动引入Hystrix依赖的 -->
 		<!-- 添加feign spring-cloud  start -->
 		<dependency>

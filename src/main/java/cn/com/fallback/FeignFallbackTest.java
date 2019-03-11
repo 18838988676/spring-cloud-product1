@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.apache.commons.collections.map.HashedMap;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import cn.com.pojo.User;
 import cn.com.service.UserService;
@@ -23,17 +24,28 @@ public class FeignFallbackTest implements UserService{
 	}
 
 	@Override
-	public Map<String, Object> findById() {
+	public Map<String, Object> findById(@PathVariable("id") Integer id) {
 		// TODO Auto-generated method stub
 		 Map<String, Object> map=new HashedMap();
-		 map.put("msg2", "888888888888888888888888888888888888");
+		 map.put("error", "错误信息："+id);
 		return map;
 	}
 
 	@Override
-	public Map<String, Object> updateUser(String userName, Long id) {
+	public Map<String, Object> updateUser(String userName, Integer id) {
+		 Map<String, Object> map=new HashedMap();
+		 map.put("error", "888888888888888888888888555555555555555555558888888888888");
+		return map;
+	}
+
+	@Override
+	public String timeout() {
+		return "熔断测试的错误结果";	}
+
+	@Override
+	public String circuitBreaker2timeout() {
 		// TODO Auto-generated method stub
-		return null;
+		return "circuitBreaker2timeout   在FeignFallbackTest的方法中";
 	}
 
 }

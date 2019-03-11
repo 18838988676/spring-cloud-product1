@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.com.fallback.FeignFallbackTest;
 import cn.com.pojo.User;
@@ -21,19 +22,28 @@ import cn.com.pojo.User;
 @FeignClient(name="WMCUSER",fallback=FeignFallbackTest.class)
 public interface UserService {
 	
-	//采用http的post请求
-	@PostMapping("/user/addUser")
+	// POST方法请求用户微服务
+	//采用http的post请求  //user指的是@RequestMapping("/user")  类上面的
+	@PostMapping("/user/addUser")			// 请求体参数
 	public Map<String,Object> addUser(@RequestBody User use);
 	
     //采用http的get请求
-	@GetMapping("/user/user333")
-	public Map<String, Object> findById();
+	@GetMapping("/user/find/{id}")
+	public Map<String, Object> findById(@PathVariable("id") Integer id);
 
 	//@RequestMapping(value = "/hellol", method= RequestMethod.POST)
 	//@RequestMapping(value = "/hellol", method= RequestMethod.GET)
 	//采用http的post请求
-	@PostMapping("/user/user/{userName}")
-	public  Map<String,Object>  updateUser(@PathVariable("userName") String userName,@RequestHeader("id") Long id);
+	@PostMapping("/user/update/{userName}")        // URL参数							// 请求头参数
+	public  Map<String,Object>  updateUser(@PathVariable("userName") String userName,@RequestHeader("id") Integer id);
 	
+	// 调用用户微服务的timeout请求
+	 @GetMapping("/user/timeout")
+	 public String timeout() ;
 	
+	 @GetMapping("/user/circuitBreaker2timeout")
+	public String circuitBreaker2timeout();
+	 
+	 
+	 
 }

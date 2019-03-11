@@ -2,6 +2,7 @@ package cn.com;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
@@ -13,6 +14,8 @@ import org.springframework.web.client.RestTemplate;
 @EnableFeignClients
 //打开注册发现中心
 @EnableEurekaClient
+//启动Hystrix断路器
+@EnableCircuitBreaker
 public class SpringCloudProductApplication {
 
 	//初始化负载均衡
