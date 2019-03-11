@@ -1,4 +1,4 @@
-package cn.com.group;
+package cn.com;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
