@@ -19,7 +19,7 @@ public class FeignFallbackTest implements UserService{
 	@Override
 	public Map<String, Object> addUser(User user) {
 		 Map<String, Object> map=new HashedMap();
-		 map.put("error", "添加用户信息详情如下："+user+"，添加失败，这是降级后指定的方法");
+		 map.put("111error---feign服务降级后，指定的方法---方法:spring-cloud-product1.FeignFallbackTest.addUser;", "添加用户信息详情如下："+user+"添加失败，这是降级后指定的方法");
 		return map;
 	}
 

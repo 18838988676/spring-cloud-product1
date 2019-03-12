@@ -56,9 +56,9 @@ public class ProductController {
 		Map<String, Object> map=new HashedMap();
 		User user=new User();
 		user.setId(111);
-		user.setLevel(456);
-		user.setNote("note");
-		user.setUserName("wmcUserNs");
+		user.setLevel(111);
+		user.setNote("111note");
+		user.setUserName("111wmcUserNs");
 		Map<String,Object> aa=userService.addUser(user);
 		return aa;
 	}
@@ -96,7 +96,8 @@ public class ProductController {
 	//@HystrixCommand(fallbackMethod="thiserrorRibbon",commandProperties= {@HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds",value="1000")})
 	
 	//此时不用再方法上设置hystrix的超时时间了，我在配置文件中配置了   9s.ribbon是3s；
-	@HystrixCommand(fallbackMethod="thiserrorRibbon")
+	//@HystrixCommand(fallbackMethod="thiserrorRibbon")
+	@HystrixCommand(fallbackMethod="thiserrorRibbon",commandProperties= {@HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds",value="1000")})
 	@GetMapping("/ribbonHystrix")
 	public String circuitBreaker1() {
 		return restTemplate.getForObject("http://WMCUSER/user/circuitBreaker1timeout", String.class);
